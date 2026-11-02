@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Виселица — онлайн</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header><h1>🎯 ВИСЕЛИЦА ONLINE</h1><p>Угадай слово быстрее соперника!</p></header>
+    <section id="lobby" class="card">
+      <label>Твоё имя <input id="name" maxlength="18" placeholder="Например, Аня"></label>
+      <div class="lobby-actions">
+        <button id="create">Создать комнату</button>
+        <div class="join">
+          <input id="roomCode" maxlength="6" placeholder="КОД КОМНАТЫ">
+          <button id="join">Присоединиться</button>
+        </div>
+      </div>
+      <p id="lobbyMessage" class="message">Создай комнату или введи код друга.</p>
+    </section>
+
+    <section id="game" class="hidden">
+      <div class="roomline card">
+        <span>Комната: <strong id="codeLabel">------</strong></span>
+        <button id="copy">Копировать код</button>
+        <span id="timer">05:00</span>
+      </div>
+      <div class="scoreboard">
+        <div class="card score"><small>ТЫ</small><strong id="myName">Игрок</strong><b id="myScore">0</b><span>очков</span></div>
+        <div class="card score"><small>СОПЕРНИК</small><strong id="opponentName">Ожидание...</strong><b id="opponentScore">0</b><span>очков</span></div>
+      </div>
+      <div class="card play">
+        <p id="status" class="message">Ожидание второго игрока...</p>
+        <div id="word" class="word">_ _ _ _</div>
+        <p id="wrong">Ошибки: 0/6</p>
+        <div id="keyboard" class="keyboard"></div>
+      </div>
+      <button id="back" class="secondary">В меню</button>
+    </section>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.7/signalr.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
